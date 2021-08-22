@@ -1,5 +1,7 @@
 package pkg
 
+import "log"
+
 //1:快適　2:やや高め　3:いますぐ換気
 func CheckCo2Level(co2 int)int{
 
@@ -24,11 +26,13 @@ func CheckComfortLevel(temp, hum float64)int{
 
 	comfortCalc := 0.81*temp+0.01*hum*(0.99*temp-14.3)+46.3
 
+	log.Println(comfortCalc)
+
 	comfort := int(comfortCalc)
 
 	var level int
 	switch {
-	case comfort>60:
+	case comfort<60:
 		level=1
 	case comfort>=60 && comfort <= 74:
 		level =2

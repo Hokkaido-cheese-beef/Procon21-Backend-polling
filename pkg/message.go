@@ -1,7 +1,7 @@
 package pkg
 
 func CreateMessage(comfortLevel,co2Level int)string{
-	message := "集中力低下の可能性\n"
+	message := ""
 	switch {
 	case comfortLevel==1 && co2Level==1:
 		message += "部屋が寒すぎます！暖かくしましょう！"
