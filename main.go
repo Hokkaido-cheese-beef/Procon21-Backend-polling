@@ -44,9 +44,9 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 				S: aws.String(pathparam),
 			},
 		},
-		KeyConditionExpression: aws.String("#ID = :sensorID"), // 検索条件
-		ScanIndexForward:       aws.Bool(false),             // ソートキーのソート順（指定しないと昇順）
-		Limit:                  aws.Int64(1),                // 最新の一件
+		KeyConditionExpression: aws.String("#ID = :sensorID"),
+		ScanIndexForward:       aws.Bool(false),
+		Limit:                  aws.Int64(1),
 	}
 
 	// 検索
