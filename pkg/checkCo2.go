@@ -6,11 +6,12 @@ import "log"
 func CheckCo2Level(co2 int)int{
 
 	var level int
-	if co2>800{
+	if co2<800{
 		level = 1
-	}else{
+	}else if co2>800 {
 		level=2
 	}
+	log.Println(level)
 	return level
 }
 
@@ -35,6 +36,7 @@ func CheckComfortLevel(temp, hum float64)int{
 	case comfort>=80:
 		level=4
 	}
+	log.Println(level)
 
 	return level
 }

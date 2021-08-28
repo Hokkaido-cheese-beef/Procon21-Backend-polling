@@ -1,16 +1,15 @@
 package main
 
 import (
-"encoding/json"
-"fmt"
-"github.com/aws/aws-lambda-go/events"
-"github.com/aws/aws-lambda-go/lambda"
-"github.com/aws/aws-sdk-go/aws"
-"github.com/aws/aws-sdk-go/aws/session"
-"github.com/aws/aws-sdk-go/service/dynamodb"
-"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
-"poring/pkg"
-
+	"encoding/json"
+	"fmt"
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
+	"poring/pkg"
 )
 
 type Item struct {
@@ -71,6 +70,7 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	co2Level:= pkg.CheckCo2Level(sensorData[0].Co2)
 
 	message := pkg.CreateMessage(comfortLevel,co2Level)
+
 
 	response := Response{
 		Temp: sensorData[0].Temp,
